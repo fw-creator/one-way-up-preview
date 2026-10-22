@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<!-- Preview only. Remove the next line at launch so Google can find the store. -->
+<meta name="robots" content="noindex">
+<title>One Way Up | Drop 01</title>
+<meta name="description" content="One Way Up. Faith you can wear. All profit goes to our young adult group.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#111;--mute:#777;--line:#e4e4e4;--tile:#f1f1f1;--pad:16px}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{background:#fff;color:var(--ink);font-family:'Roboto Condensed','Arial Narrow',Arial,sans-serif;font-size:12px;letter-spacing:.02em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;letter-spacing:inherit;text-transform:inherit;color:inherit;background:none;border:0;cursor:pointer}
+  .u{text-transform:uppercase}
+  .b{font-weight:700}
+
+  .bar{background:#f2f2f2;text-align:center;padding:12px var(--pad);font-weight:700;text-transform:uppercase;font-size:12px}
+  header{position:sticky;top:0;z-index:40;background:#fff;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:56px;padding:0 var(--pad)}
+  header .ico{display:flex;gap:18px;align-items:center}
+  header .ico.r{justify-self:end}
+  .logo{font-weight:700;font-size:20px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+  svg{display:block}
+  .bagbtn{position:relative}
+  .bagbtn b{position:absolute;top:-6px;right:-9px;min-width:16px;height:16px;border-radius:8px;background:var(--ink);color:#fff;font-size:10px;line-height:16px;text-align:center;padding:0 4px}
+  .bagbtn b:empty,.bagbtn b.zero{display:none}
+
+  /* hero */
+  .hero{position:relative;height:calc(100svh - 56px - 40px);min-height:520px;background:#0b0b0b;overflow:hidden}
+  .hero img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+  .hero .txt{position:absolute;left:0;right:0;bottom:0;padding:0 var(--pad) 22px;text-align:center;color:#fff;background:linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,0))}
+  .hero h1{font-size:clamp(34px,10vw,64px);line-height:.95;font-weight:700;text-transform:uppercase;letter-spacing:.01em;text-shadow:0 2px 20px rgba(0,0,0,.4)}
+  .hero .cta{display:inline-block;margin-top:18px;border:1.5px solid #fff;padding:13px 26px;font-weight:700;text-transform:uppercase;font-size:13px}
+
+  /* carousel */
+  .row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-top:1px solid var(--line)}
+  .row::-webkit-scrollbar{display:none}
+  .card{flex:0 0 62%;scroll-snap-align:start;text-align:left;border-right:1px solid var(--line);display:block}
+  .card .pic{aspect-ratio:1/1;background:var(--tile);overflow:hidden;position:relative}
+  .card .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .card .lab{padding:12px 10px 0;color:var(--mute);font-size:10px;text-transform:uppercase}
+  .card .cap{display:flex;justify-content:space-between;gap:10px;padding:6px 10px 16px;text-transform:uppercase;line-height:1.35}
+  .card .cap b{display:block;font-size:13px}
+  .card .cap i{font-style:normal;color:var(--mute);font-size:10px}
+  .card .cap span{font-weight:400;font-size:12px;white-space:nowrap}
+
+  /* editorial */
+  .full{background:#111}
+  .full img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%}
+  .inset{padding:var(--pad)}
+  .inset .fr{position:relative;background:#111;display:block;width:100%;text-align:left}
+  .inset img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 20%}
+  .chip{position:absolute;left:14px;bottom:14px;background:#111;color:#fff;font-weight:700;text-transform:uppercase;padding:7px 10px;font-size:11px}
+
+  .pair{display:block;width:100%;text-align:center;border-top:1px solid var(--line)}
+  .pair .two{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#fff}
+  .pair .two div{aspect-ratio:4/5;background:var(--tile);overflow:hidden}
+  .pair .two img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+  .pair .cap{padding:16px var(--pad) 22px;text-transform:uppercase;font-weight:700;font-size:13px}
+  .pair .cap span{font-weight:400;color:var(--mute);margin-left:10px}
+
+  .about{padding:48px var(--pad) 8px;max-width:600px}
+  .about h2{font-size:28px;font-weight:700;text-transform:uppercase;line-height:1;margin-bottom:14px}
+  .about p{font-size:15px;line-height:1.6;color:#333}
+  .faq{padding:36px var(--pad) 0;max-width:600px}
+  details{border-top:1px solid var(--line);padding:16px 0}
+  details:last-of-type{border-bottom:1px solid var(--line)}
+  summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;font-weight:700;text-transform:uppercase;font-size:13px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+"}
+  details[open] summary::after{content:"\2013"}
+  details p{margin-top:10px;font-size:14px;line-height:1.6;color:#444}
+  .join{padding:40px var(--pad) 0;max-width:600px}
+  .join h2{font-size:13px;font-weight:700;text-transform:uppercase;margin-bottom:12px}
+  .join form{display:flex;border:1.5px solid var(--ink)}
+  .join input{flex:1;min-width:0;border:0;height:48px;padding:0 12px;font:inherit;font-size:16px;outline:none}
+  .join form button{padding:0 18px;background:var(--ink);color:#fff;font-weight:700;text-transform:uppercase}
+  .join .soon{color:var(--mute);text-transform:uppercase;font-weight:700}
+  footer{margin-top:56px;background:#111;color:#bbb;padding:36px var(--pad) calc(40px + env(safe-area-inset-bottom,0px))}
+  footer .big{color:#fff;font-weight:700;font-size:36px;text-transform:uppercase;line-height:1;margin-bottom:22px}
+  footer .cols{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;text-transform:uppercase;font-size:11px}
+
+  /* product view */
+  .pdp{position:fixed;inset:0;z-index:60;background:#fff;overflow-y:auto;transform:translateY(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+  .pdp.on{transform:none}
+  .pdp .top{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:center;height:56px;padding:0 var(--pad);background:#fff;font-weight:700;text-transform:uppercase}
+  .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .slides::-webkit-scrollbar{display:none}
+  .slides img{flex:0 0 100%;width:100%;aspect-ratio:4/5;object-fit:cover;scroll-snap-align:start;background:var(--tile)}
+  .dots{display:flex;justify-content:center;gap:6px;padding:12px 0 0}
+  .dots i{width:6px;height:6px;border-radius:3px;background:#ccc}
+  .dots i.on{background:var(--ink)}
+  .pd{padding:18px var(--pad) calc(30px + env(safe-area-inset-bottom,0px))}
+  .pd .ph{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .pd h1{font-size:22px;font-weight:700;text-transform:uppercase;line-height:1.05}
+  .pd .price{font-size:16px;white-space:nowrap;padding-top:3px}
+  .pd .sub{color:var(--mute);margin-top:6px;text-transform:uppercase;font-size:11px}
+  .pd .lbl{margin-top:24px;font-weight:700;text-transform:uppercase;font-size:11px}
+  .sizes{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0 12px}
+  .sizes.one{grid-template-columns:1fr}
+  .sizes button{height:46px;border:1.5px solid var(--line);font-weight:700;text-transform:uppercase}
+  .sizes button.on{border-color:var(--ink);background:var(--ink);color:#fff}
+  .addbtn{width:100%;height:52px;background:var(--ink);color:#fff;font-weight:700;text-transform:uppercase;font-size:13px}
+  .addbtn[disabled]{background:#cfcfcf}
+  .pd .fine{margin-top:16px;color:var(--mute);font-size:13px;line-height:1.6}
+
+  /* bag */
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:70;opacity:0;pointer-events:none;transition:opacity .25s}
+  .scrim.on{opacity:1;pointer-events:auto}
+  .bag{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);z-index:80;background:#fff;transform:translateX(100%);transition:transform .32s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+  .bag.on{transform:none}
+  .bag .top{display:flex;justify-content:space-between;align-items:center;height:56px;padding:0 var(--pad);border-bottom:1px solid var(--line);font-weight:700;text-transform:uppercase}
+  #bagList{flex:1;overflow:auto;padding:0 var(--pad)}
+  .brow{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);line-height:1.5;text-transform:uppercase}
+  .brow img{width:72px;height:72px;object-fit:cover;background:var(--tile)}
+  .brow b{font-size:13px}
+  .brow i{font-style:normal;color:var(--mute);display:block;font-size:11px}
+  .brow .buy{display:inline-block;margin-top:4px;background:var(--ink);color:#fff;padding:6px 10px;font-weight:700;font-size:11px}
+  .brow .x{color:var(--mute);text-decoration:underline;font-size:11px}
+  #bagFoot{padding:14px var(--pad) calc(18px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line)}
+  .total{display:flex;justify-content:space-between;font-weight:700;text-transform:uppercase;font-size:14px;margin-bottom:8px}
+  #bagFoot .fine{color:var(--mute);font-size:13px;line-height:1.5}
+  .empty{padding:28px 0;color:var(--mute);text-transform:uppercase;font-weight:700}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 18px;z-index:95;opacity:0;pointer-events:none;transition:opacity .25s;font-weight:700;text-transform:uppercase}
+  .toast.on{opacity:1}
+
+  @media(min-width:760px){
+    :root{--pad:28px}
+    .hero{height:calc(100svh - 96px)}
+    .hero h1{font-size:72px}
+    .card{flex-basis:30%}
+    .full img{aspect-ratio:16/8;object-position:50% 20%}
+    .inset img{aspect-ratio:16/7}
+    .pair .two div{aspect-ratio:1/1}
+    .about,.faq,.join{margin:0 auto}
+  }
+</style>
+</head>
+<body>
+
+<div class="bar">All profit goes to our young adult group</div>
+<header>
+  <div class="ico">
+    <a href="#shop" aria-label="Shop"><svg width="22" height="16" viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M0 1h22M0 8h22M0 15h22"/></svg></a>
+  </div>
+  <a class="logo" href="#top">One Way Up</a>
+  <div class="ico r">
+    <button class="bagbtn" id="bagBtn" aria-label="Bag"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 6h16l-1 15H3L2 6z"/><path d="M6 6V5a4 4 0 0 1 8 0v1"/></svg><b id="badge" class="zero">0</b></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <img src="images/fl-hoodie-front.jpg" alt="A young man outside at night in the Fix Your Eyes hoodie" fetchpriority="high">
+    <div class="txt">
+      <h1>Fix Your<br>Eyes Hoodie</h1>
+      <a class="cta" href="#shop">Shop Drop 01</a>
+    </div>
+  </section>
+
+  <div class="row" id="shop"></div>
+
+  <section class="full">
+    <img src="images/fl-crew-back.jpg" alt="A young man at a taco truck at night, showing the Higher Ground print on his back" loading="lazy">
+  </section>
+
+  <div id="pairs"></div>
+
+  <section class="inset">
+    <button class="fr" data-open="snapback">
+      <img src="images/fl-snapback.jpg" alt="A young man in the One Way Up snapback at night" loading="lazy">
+      <span class="chip">Headwear</span>
+    </button>
+  </section>
+
+  <section class="about" id="info">
+    <h2>Made by our group.<br>For our group.</h2>
+    <p>One Way Up is run by our church young adult group. Every piece is printed after you order. All profit goes back to the group.</p>
+  </section>
+
+  <section class="faq">
+    <details><summary>Where the money goes</summary><p>All profit goes to the young adult group.</p></details>
+    <details><summary>Shipping</summary><p>Each piece is printed after you order, so it takes a little longer than a store shelf. We will post exact times before launch.</p></details>
+    <details><summary>Sizing</summary><p>The pieces are cut oversized. A size guide goes up before launch.</p></details>
+    <details><summary>Returns</summary><p>Return rules will be posted before launch.</p></details>
+    <details><summary>Photos</summary><p>The people in these photos are AI-generated stand-ins. Real photos of our group are coming.</p></details>
+  </section>
+
+  <section class="join">
+    <h2>Get the drop first</h2>
+    <div id="joinSlot"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="big">One Way Up</div>
+  <div class="cols"><span>© One Way Up</span><span>Photos are AI-generated</span></div>
+</footer>
+
+<div class="pdp" id="pdp" role="dialog" aria-modal="true" aria-label="Product">
+  <div class="top"><button id="pdpClose">← Back</button><button id="pdpBag">Bag (<span id="badge2">0</span>)</button></div>
+  <div class="slides" id="slides"></div>
+  <div class="dots" id="dots"></div>
+  <div class="pd">
+    <div class="ph"><h1 id="pName"></h1><div class="price" id="pPrice"></div></div>
+    <div class="sub" id="pSub"></div>
+    <div class="lbl">Size</div>
+    <div class="sizes" id="pSizes"></div>
+    <button class="addbtn" id="pAdd" disabled>Select a size</button>
+    <p class="fine">Printed after you order. Prices are placeholders until launch.</p>
+  </div>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="bag" id="bag" role="dialog" aria-modal="true" aria-label="Bag">
+  <div class="top"><span>Bag</span><button id="bagClose">Close</button></div>
+  <div id="bagList"></div>
+  <div id="bagFoot"></div>
+</aside>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+  // ===== Settings to change when you're ready to sell =====
+  // Paste the signup form link here to turn on the newsletter. Empty = "opens at launch".
+  const SIGNUP_URL = "";
+  // Each product has its own store link in "url". Paste the product page link from Fourthwall (or Shopify) there.
+  // With a link the bag shows a Buy button. Empty = "Opens at launch". Prices are placeholders.
+  const SIZES = ["S","M","L","XL"];
+  const PRODUCTS = [
+    // flat = the product shot on grey. views = the photos in the product view (AI-generated stand-ins, swap for real ones later).
+    { id:"fix-your-eyes", url:"", name:"Fix Your Eyes Hoodie", color:"Washed black", price:55, sizes:SIZES, flat:"images/7.jpg",
+      views:["images/7.jpg","images/fl-hoodie-front.jpg","images/fl-hoodie-back.jpg"] },
+    { id:"higher-ground", url:"", name:"Higher Ground Crewneck", color:"Washed black", price:48, sizes:SIZES, flat:"images/3.jpg",
+      views:["images/3.jpg","images/fl-crew-front.jpg","images/fl-crew-back.jpg"] },
+    { id:"set-apart", url:"", name:"Set Apart Tee", color:"Bone", price:28, sizes:SIZES, flat:"images/4.jpg",
+      views:["images/4.jpg","images/fl-tee-front.jpg","images/fl-tee-back.jpg"] },
+    { id:"snapback", url:"", name:"One Way Up Snapback", color:"Black", price:28, sizes:["One size"], flat:"images/18.jpg",
+      views:["images/18.jpg","images/fl-snapback.jpg"] },
+    { id:"disciple", url:"", name:"Disciple Cap", color:"Bone", price:28, sizes:["One size"], flat:"images/16.jpg",
+      views:["images/16.jpg","images/fl-cap.jpg"] }
+  ];
+
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const money = n => '$'+n;
+  const find = id => PRODUCTS.find(p=>p.id===id);
+
+  $('#shop').innerHTML = PRODUCTS.map(p=>`
+    <button class="card" data-open="${p.id}">
+      <div class="pic"><img src="${esc(p.flat)}" alt="${esc(p.name)}" loading="lazy"></div>
+      <div class="lab">Drop 01</div>
+      <div class="cap"><div><b>${esc(p.name)}</b><i>${esc(p.color)}</i></div><span>${money(p.price)}</span></div>
+    </button>`).join('');
+  // flat shot next to the model shot, like a lookbook spread
+  $('#pairs').innerHTML = ['higher-ground','set-apart'].map(id=>{ const p=find(id); return `
+    <button class="pair" data-open="${p.id}">
+      <div class="two"><div><img src="${esc(p.flat)}" alt="${esc(p.name)}" loading="lazy"></div><div><img src="${esc(p.views[1])}" alt="${esc(p.name)} worn at night" loading="lazy"></div></div>
+      <div class="cap">${esc(p.name)}<span>${money(p.price)}</span></div>
+    </button>`; }).join('');
+  $('#joinSlot').innerHTML = SIGNUP_URL
+    ? `<form action="${esc(SIGNUP_URL)}" method="post"><input type="email" name="email" placeholder="Email" required aria-label="Email"><button type="submit">Join</button></form>`
+    : `<p class="soon">Opens at launch</p>`;
+
+  // product view
+  let cur=null,size=null;
+  function openPdp(id){
+    cur=find(id); size=null;
+    $('#slides').innerHTML = cur.views.map((v,i)=>`<img src="${esc(v)}" alt="${esc(cur.name)}, photo ${i+1}">`).join('');
+    $('#slides').scrollLeft=0;
+    $('#dots').innerHTML = cur.views.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('');
+    $('#pName').textContent=cur.name; $('#pSub').textContent=cur.color; $('#pPrice').textContent=money(cur.price);
+    const one=cur.sizes.length===1;
+    $('#pSizes').className='sizes'+(one?' one':'');
+    $('#pSizes').innerHTML=cur.sizes.map(s=>`<button data-s="${esc(s)}">${esc(s)}</button>`).join('');
+    const a=$('#pAdd'); a.disabled=true; a.textContent='Select a size';
+    if(one) pickSize(cur.sizes[0]);
+    $('#pdp').scrollTop=0; $('#pdp').classList.add('on'); document.body.style.overflow='hidden';
+  }
+  function closePdp(){ $('#pdp').classList.remove('on'); document.body.style.overflow=''; }
+  function pickSize(s){
+    size=s; document.querySelectorAll('#pSizes button').forEach(b=>b.classList.toggle('on',b.dataset.s===s));
+    const a=$('#pAdd'); a.disabled=false; a.textContent='Add to bag';
+  }
+  document.addEventListener('click',e=>{ const t=e.target.closest('[data-open]'); if(t) openPdp(t.dataset.open); });
+  $('#pdpClose').addEventListener('click',closePdp);
+  $('#pSizes').addEventListener('click',e=>{ const s=e.target.dataset.s; if(s) pickSize(s); });
+  $('#slides').addEventListener('scroll',()=>{ const sl=$('#slides'); const i=Math.round(sl.scrollLeft/sl.clientWidth); document.querySelectorAll('#dots i').forEach((d,j)=>d.classList.toggle('on',j===i)); },{passive:true});
+  $('#pAdd').addEventListener('click',()=>{
+    if(!cur||!size) return;
+    bag.push({id:cur.id,size}); save(); renderBag(); toast('Added to bag');
+  });
+
+  // bag
+  let bag=[]; try{ bag=JSON.parse(sessionStorage.getItem('owu-bag')||'[]') }catch(e){}
+  bag = bag.filter(it=>find(it.id));
+  const save=()=>{ try{ sessionStorage.setItem('owu-bag',JSON.stringify(bag)) }catch(e){} };
+  const total=()=>bag.reduce((s,it)=>s+find(it.id).price,0);
+  function toast(m){ const t=$('#toast'); t.textContent=m; t.classList.add('on'); clearTimeout(toast.t); toast.t=setTimeout(()=>t.classList.remove('on'),1500); }
+  function renderBag(){
+    const n=bag.length; $('#badge').textContent=n; $('#badge').classList.toggle('zero',!n); $('#badge2').textContent=n;
+    $('#bagList').innerHTML = n ? bag.map((it,i)=>{
+      const p=find(it.id);
+      return `<div class="brow"><img src="${esc(p.flat)}" alt=""><div><b>${esc(p.name)}</b><i>${esc(it.size)} · ${money(p.price)}</i>${p.url?`<a class="buy" href="${esc(p.url)}" target="_blank" rel="noopener">Buy this</a>`:'<i>Opens at launch</i>'}</div><button class="x" data-rm="${i}">Remove</button></div>`;
+    }).join('') : '<div class="empty">Your bag is empty</div>';
+    $('#bagFoot').innerHTML = n ? `<div class="total"><span>Total</span><span>${money(total())}</span></div><p class="fine">${bag.some(it=>find(it.id).url)?'Each item checks out on our secure store. Shipping and tax are added there.':'Checkout is not open yet. Prices are placeholders.'}</p>` : '';
+  }
+  $('#bagList').addEventListener('click',e=>{ const i=e.target.dataset.rm; if(i===undefined) return; bag.splice(+i,1); save(); renderBag(); });
+  const openBag=()=>{ renderBag(); $('#bag').classList.add('on'); $('#scrim').classList.add('on'); };
+  const closeBag=()=>{ $('#bag').classList.remove('on'); $('#scrim').classList.remove('on'); };
+  $('#bagBtn').addEventListener('click',openBag); $('#pdpBag').addEventListener('click',openBag);
+  $('#bagClose').addEventListener('click',closeBag); $('#scrim').addEventListener('click',closeBag);
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ if($('#bag').classList.contains('on')) closeBag(); else closePdp(); } });
+  renderBag();
+</script>
+</body>
+</html>
